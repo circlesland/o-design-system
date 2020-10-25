@@ -5,7 +5,6 @@
     await window.o.session.logout();
     Router.page(`login`);
   }
-
 </script>
 
 <style>
@@ -17,7 +16,7 @@
 </style>
 
 <div class="grid h-full">
-  <main class="overflow-y-scroll h-full bg-gray-100 p-8 text-gray-800">
+  <main class="h-full p-8 overflow-y-scroll text-gray-800 bg-gray-100">
     <p class="text-xs text-gray-500">Profile</p>
     <p class="py-1">first name</p>
     <br />
@@ -44,7 +43,7 @@
     <Route dapp={o.DENTITY} route="dapps">
       <div class="w-full text-center text-primary">
         <span
-          class="bg-gray-100 border border-gray-400 px-4 py-2 rounded">back</span>
+          class="px-4 py-2 bg-gray-100 border border-gray-400 rounded">back</span>
       </div>
     </Route>
   </footer>
