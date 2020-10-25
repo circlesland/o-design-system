@@ -31,10 +31,10 @@
         class="text-primary border rounded border-gray-300 w-full h-24 p-2 mb-2 bg-transparent" />
     </div>
     <div class="flex">
-      <Route dapp={o.WALLET} route="safe" cssClass="mr-4">
+      <Route dapp={o.WALLET} route="transactions" cssClass="mr-4">
         <button class="w-full bg-gray-300 text-primary">Store Local</button>
       </Route>
-      <Route dapp={o.WALLET} route="safe">
+      <Route dapp={o.WALLET} route="transactions">
         <button class="w-full">Save with Textile</button>
       </Route>
     </div>

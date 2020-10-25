@@ -2,9 +2,8 @@
   import { o, Router } from "@omoearth/o-types";
   import Route from "../1-Atoms/Route.svelte";
 
-  if(!window.o.session.hasSession) Router.page("login");
+  if (!window.o.session.hasSession) Router.page("login");
   let user = window.o.session.getUser();
-
 </script>
 
 <style>
@@ -16,25 +15,27 @@
 </style>
 
 <div class="grid h-full">
-  <main class="overflow-y-scroll h-full bg-gray-100">
+  <main class="h-full overflow-y-scroll bg-gray-100">
     <div
-      class="text-white mx-4 mt-4 mb-2 border-gray-200 border flex justify-center text-4xl font-bold text-center bg-primary rounded">
+      class="flex justify-center mx-4 mt-4 mb-2 text-4xl font-bold text-center text-white border border-gray-200 rounded bg-primary">
       <div>
-      {#if user}
-        <img
-          src="{user.img}"
-          class="w-32 h-32 rounded-full border-white border-4 mt-6"
-          alt="name" />
-        <p class="text-lg font-title text-gray-100 py-6 uppercase">
-          -- {user.email} --
-        </p>
+        {#if user}
+          <img
+            src={user.img}
+            class="w-32 h-32 mx-auto mt-6 border-4 border-white rounded-full"
+            alt="name" />
+          <p class="py-6 text-lg text-gray-100 uppercase font-title">
+            --
+            {user.email}
+            --
+          </p>
         {/if}
       </div>
     </div>
     <div class="flex flex-wrap mx-2">
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-800 border rounded p-8 text-center bg-white">
+          class="flex items-center justify-center h-48 p-8 text-center text-gray-800 bg-white border border-gray-200 rounded">
           <Route dapp={o.DENTITY} route="odentity">
             <div class="text-primary">
               <i class="text-5xl fas fa-user-astronaut" />
@@ -45,7 +46,7 @@
       </div>
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-400 border rounded p-6 text-center bg-white">
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
           <Route dapp={o.WALLET} route="index">
             <div class="text-gray-500">
               <i class="text-5xl fas fa-piggy-bank" />
@@ -57,7 +58,7 @@
       </div>
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-800 border rounded p-8 text-center bg-white">
+          class="flex items-center justify-center h-48 p-8 text-center text-gray-800 bg-white border border-gray-200 rounded">
           <div class="text-gray-500">
             <i class="text-5xl fas fa-address-book" />
             <p class="pt-3">°Friends</p>
@@ -68,7 +69,7 @@
 
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-400 border rounded p-6 text-center bg-white">
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
           <div class="text-gray-500">
             <i class="text-5xl fas fa-comments" />
             <p class="pt-3">°Talk</p>
@@ -78,7 +79,7 @@
       </div>
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-400 border rounded p-6 text-center bg-white">
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
           <div class="text-gray-500">
             <i class="text-5xl fas fa-store" />
             <p class="pt-3">°Market</p>
@@ -88,7 +89,7 @@
       </div>
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-400 border rounded p-6 text-center bg-white">
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
           <div class="text-gray-500">
             <i class="text-5xl fas fa-user-friends" />
             <p class="pt-3">°Teams</p>
@@ -98,7 +99,7 @@
       </div>
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-400 border rounded p-6 text-center bg-white">
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
           <div class="text-gray-500">
             <i class="text-5xl fas fa-film" />
             <p class="pt-3">°Movies</p>
@@ -108,7 +109,7 @@
       </div>
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-400 border rounded p-6 text-center bg-white">
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
           <div class="text-gray-500">
             <i class="text-5xl fas fa-headphones" />
             <p class="pt-3">°Music</p>
@@ -118,7 +119,7 @@
       </div>
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-400 border rounded p-6 text-center bg-white">
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
           <div class="text-gray-500">
             <i class="text-5xl fas fa-book" />
             <p class="pt-3">°Books</p>
@@ -128,7 +129,7 @@
       </div>
       <div class="w-1/2 p-2">
         <div
-          class="flex h-48 items-center justify-center border-gray-200 text-gray-400 border rounded p-6 text-center bg-white">
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
           <div class="text-gray-500">
             <i class="text-5xl fas fa-file-alt" />
             <p class="pt-3">°Files</p>
@@ -140,33 +141,33 @@
   </main>
 
   <footer
-    class="pb-2 pt-3 px-4 flex justify-between text-gray-400 bg-white border-t border-gray-300">
-    <div class="text-xs px-4 flex items-center text-center justify-center">
+    class="flex justify-between px-4 pt-3 pb-2 text-gray-400 bg-white border-t border-gray-300">
+    <div class="flex items-center justify-center px-4 text-xs text-center">
       <div>
         <i class="text-2xl fas fa-piggy-bank" />
         <p>soon</p>
       </div>
     </div>
-    <div class="text-xs px-4 flex items-center  text-center justify-center">
+    <div class="flex items-center justify-center px-4 text-xs text-center">
       <div>
         <i class="text-2xl fas fa-store" />
         <p>soon</p>
       </div>
     </div>
-    <div class="text-xs px-4 flex items-center  text-center justify-center">
+    <div class="flex items-center justify-center px-4 text-xs text-center">
       <div>
         <i class="text-2xl fas fa-plus" />
         <p>soon</p>
       </div>
     </div>
-    <div class="text-xs px-4 flex items-center  text-center justify-center">
+    <div class="flex items-center justify-center px-4 text-xs text-center">
       <div>
         <i class="text-2xl fas fa-comments" />
         <p>soon</p>
       </div>
     </div>
     <div
-      class="text-xs text-primary px-4 flex items-center  text-center justify-center">
+      class="flex items-center justify-center px-4 text-xs text-center text-primary">
       <Route dapp={o.DENTITY} route="dapps">
         <div>
           <i class="text-2xl fas fa-user-circle" />
