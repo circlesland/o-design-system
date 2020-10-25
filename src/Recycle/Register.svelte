@@ -1,46 +1,81 @@
 <script lang="ts">
-  import { o } from "@omoearth/o-types";
-  import Route from "../1-Atoms/Route.svelte";
+  import { o, Router } from "@omoearth/o-types";
+  import Mail from "../Recycle/Mail.svelte";
+  let signingUp = false;
+  let username = "";
+  let email = "";
+  let errorMessage = "";
+
+  async function signUp() {
+    signingUp = true;
+    var result = await window.o.session.signInOrSignUp(email,username);
+    if (result.error) {
+      errorMessage = result.error.message;
+      signingUp = false;
+    } else {
+      Router.page.base(`/ipns/${o.DENTITY}`);
+      Router.page(`dapps`);
+    }
+  }
 </script>
 
-<style>
-  .grid {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    position: relative;
-  }
-</style>
-
-<div class="grid h-full">
-  <main class="overflow-y-scroll h-full bg-gray-100 p-8">
-    <h1 class="text-center text-3xl font-title text-primary">Signup</h1>
-    <p class="text-sm py-4 text-center text-gray-700">
-      signup and create your privately encrypted data, (d)app and file storage
-      with textile
-      <br />(up to 1GB free storage)
-      <br /><br />
-      <span class="text-xs text-gray-500">
-        *decentralized DID signup without email coming soon</span>
-    </p>
-  </main>
-  <footer class="p-4">
-    <h3 class="text-sm text-primary font-medium">Please enter your email</h3>
-    <div class="box border rounded flex flex-col bg-white mb-2">
-      <input
-        placeholder="f.e. omo@sapien.org"
-        class="text-grey-darkest flex-1 p-2 m-1 bg-transparent" />
-    </div>
-
-    <Route dapp={o.DENTITY} route="mail" cssClass="w-full mb-2">
-      <div class="w-full text-center text-primary">
-        <span class="bg-gray-100 border border-gray-400 px-4 py-2 rounded">Send
-          register mail</span>
+{#if !signingUp}
+  <style>
+    .grid {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      position: relative;
+    }
+  </style>
+  <div class="grid h-full">
+    <main class="overflow-y-scroll h-full bg-gray-100 p-8">
+      <h1 class="text-center text-3xl font-title text-primary">Signup</h1>
+      <p class="text-sm py-4 text-center text-gray-700">
+        signup and create your privately encrypted data, (d)app and file storage
+        with textile
+        <br />(up to 1GB free storage)
+        <br /><br />
+        <span class="text-xs text-gray-500">
+          *decentralized DID signup without email coming soon</span>
+      </p>
+    </main>
+    <footer class="p-4">
+   
+      <h3 class="text-sm text-primary font-medium">Please choose username</h3>
+      <div class="box border rounded flex flex-col bg-white mb-2">
+     
+        <input
+      bind:value={username}
+      placeholder="f.e. mamaomo"
+      class="text-grey-darkest flex-1 p-2 m-1 bg-transparent" />
       </div>
-    </Route>
-    <button class="w-full bg-gray-300 text-gray-500">Sign up with Metamask
-      (coming soon)</button>
-  </footer>
-</div>
+
+      <h3 class="text-sm text-primary font-medium">Please enter your email</h3>
+      <div class="box border rounded flex flex-col bg-white mb-2">
+     
+        <input
+          bind:value={email}
+          placeholder="f.e. omo@sapien.org"
+          class="text-grey-darkest flex-1 p-2 m-1 bg-transparent" />
+        {#if errorMessage}
+          <p style="color:red">{errorMessage}</p>
+        {/if}
+      </div>
+
+      <div on:click={signUp} class="w-full mb-2">
+        <div class="w-full text-center text-primary">
+          <span
+            class="bg-gray-100 border border-gray-400 px-4 py-2 rounded">Send
+            register mail</span>
+        </div>
+      </div>
+      <button class="w-full bg-gray-300 text-gray-500">Sign up with Metamask
+        (coming soon)</button>
+    </footer>
+  </div>
+{:else}
+  <Mail />
+{/if}
 
 <!-- <h1 class="text-primary text-3xl font-bold pb-2">Register</h1>
 <div class="col sm:w-1/2">

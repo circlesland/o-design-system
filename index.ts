@@ -14,6 +14,8 @@ import WalletIntro from "./src/Recycle/WalletIntro.svelte"
 import WalletConnectCircleSeed from "./src/Recycle/WalletConnectCircleSeed.svelte"
 import WalletExplainSafe from "./src/Recycle/WalletExplainSafe.svelte"
 
+import BucketUpload from "./src/2-Molecules/BucketUpload.svelte";
+
 export const ViewComponents = [Boot, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed, WalletExplainSafe]
 
 export { Boot };

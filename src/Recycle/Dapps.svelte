@@ -26,7 +26,10 @@
           class="w-32 h-32 rounded-full border-white border-4 mt-6"
           alt="name" />
         <p class="text-lg font-title text-gray-100 py-6 uppercase">
-          -- {user.email} --
+          -- {user.username} --
+        </p>
+        <p class="text-md font-title text-gray-100 py-6 uppercase">
+           {user.email} 
         </p>
         {/if}
       </div>
