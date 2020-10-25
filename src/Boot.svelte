@@ -30,19 +30,26 @@
     console.log("CONTEXT", ctx);
     try {
       let manifest = await Router.getManifestFromRoute(ctx);
-      currentPage = Page.deserialize(manifest, registry);
-      if (!currentPage.ui) {
+      var newPage = Page.deserialize(manifest, registry);
+      console.log("NEW PAGE", newPage);
+      if (newPage.ui == null || newPage.ui == undefined) {
+        console.log("LOAD CONTENT UI undefined");
+
         error = "Page has no defined UI";
         currentPage = null;
         return;
       }
       error = null;
+      currentPage = null;
+      setTimeout(() => {
+        currentPage = newPage;
+      }, 1);
     } catch (e) {
-      error = "Error while loading manifest";
+      console.log("LOAD CONTENT ERROR", e);
+      error = e.message;
       currentPage = null;
     }
   }
-
   registry.registerClass(CssGridTemplate);
   registry.registerClass(ExampleButtonArray);
   registry.registerClass(Molecule);
@@ -50,7 +57,7 @@
 </script>
 
 <style>
-  div {
+  .error {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,11 +76,14 @@
   class=" bg-white h-screen flex flex-col items-center justify-center bg-grey-lighter bg-cover bg-center"
   style="background-image: url(https://source.unsplash.com/7awMZWDS4rg)">
   <div
-    class="wrap shadow-2xl border border-gray-300 bg-white rounded-lg md:m-12 w-full h-full max-w-md justify-center">
+    class="wrap shadow-2xl border border-gray-300 bg-white rounded-lg md:m-12 w-full h-full max-w-md justify-center"
+    style="height:700px;position:relative;">
     {#if currentPage}
       <Compositor component={currentPage.ui} {registry} />
     {:else if error}
-      <p class="error">ERROR: {error}</p>
+      <div class="error">
+        <p>ERROR: {error}</p>
+      </div>
     {:else}
       <p class="loading">°os loading</p>
     {/if}

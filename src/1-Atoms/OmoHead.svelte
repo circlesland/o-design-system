@@ -32,7 +32,8 @@
     @apply font-sans;
   }
 </style>
-<svelte:options tag="o-head"/>
+
+<svelte:options tag="o-head" />
 <svelte:head>
   <!-- <link rel="shortcut icon" href="https://ipfs.io/ipfs/QmRzaPX95ysnpzrVBLeZgFhcEdVmF27L3JDeBVNYCZWtBv/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="https://ipfs.io/ipfs/QmRVrVNUn1oAVyomf81MNhQeDkJTPnUEo8AYuAU41Rkfp4" />
@@ -41,6 +42,11 @@
   <link rel="mask-icon" href="https://ipfs.io/ipfs/QmSRL1mYnsvnW5PsMJMiKGDor5Vq8RMh74wmN6XoA91TfJ" color="#5bbad5" />
   <meta name="msapplication-TileColor" content="#2b5797" />
   <meta name="theme-color" content="#ffffff" /> -->
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>{title}</title>
