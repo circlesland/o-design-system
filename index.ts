@@ -10,6 +10,10 @@ import Register from "./src/Recycle/Register.svelte"
 import SaveName from "./src/Recycle/SaveName.svelte"
 import SaveProfileImage from "./src/Recycle/SaveProfileImage.svelte"
 
-export const ViewComponents = [Boot, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage]
+import WalletIntro from "./src/Recycle/WalletIntro.svelte"
+import WalletConnectCircleSeed from "./src/Recycle/WalletConnectCircleSeed.svelte"
+import WalletExplainSafe from "./src/Recycle/WalletExplainSafe.svelte"
+
+export const ViewComponents = [Boot, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed, WalletExplainSafe]
 
 export { Boot };

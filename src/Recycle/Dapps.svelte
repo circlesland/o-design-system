@@ -17,7 +17,7 @@
       class="text-white mx-4 mt-4 mb-2 border-gray-200 border flex justify-center text-4xl font-bold text-center bg-primary rounded">
       <div>
         <img
-          src="https://source.unsplash.com/rDEOVtE7vOs/500x500"
+          src="/images/placeholder_profile.jpg"
           class="w-32 h-32 rounded-full border-white border-4 mt-6"
           alt="name" />
         <p class="text-lg font-title text-gray-100 py-6 uppercase">
@@ -40,11 +40,13 @@
       <div class="w-1/2 p-2">
         <div
           class="flex h-48 items-center justify-center border-gray-200 text-gray-400 border rounded p-6 text-center bg-white">
-          <div class="text-gray-500">
-            <i class="text-5xl fas fa-piggy-bank" />
-            <p class="pt-3">°Wallet</p>
-            <span class="text-xs">(coming soon)</span>
-          </div>
+          <Route dapp={o.WALLET} route="index">
+            <div class="text-gray-500">
+              <i class="text-5xl fas fa-piggy-bank" />
+              <p class="pt-3">°Wallet</p>
+              <span class="text-xs">(coming soon)</span>
+            </div>
+          </Route>
         </div>
       </div>
       <div class="w-1/2 p-2">
@@ -131,8 +133,9 @@
     </div>
   </main>
 
-  <footer class="pb-1 pt-2 px-4 flex justify-between text-gray-400">
-    <div class="text-xs px-4 flex items-center  text-center justify-center">
+  <footer
+    class="pb-2 pt-3 px-4 flex justify-between text-gray-400 bg-white border-t border-gray-300">
+    <div class="text-xs px-4 flex items-center text-center justify-center">
       <div>
         <i class="text-2xl fas fa-piggy-bank" />
         <p>soon</p>

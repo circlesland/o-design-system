@@ -31,6 +31,10 @@
     bottom: 0;
     @apply font-sans;
   }
+
+  button {
+    @apply py-2 px-4 text-center bg-primary rounded text-white;
+  }
 </style>
 
 <svelte:options tag="o-head" />

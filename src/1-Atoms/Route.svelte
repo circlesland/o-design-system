@@ -6,8 +6,9 @@
   export let cssClass: string = "";
 
   function navigateTo() {
-    Router.page.base(`${window.location.origin}/ipns/${dapp}`);
-    Router.page(`${route}`);
+    // Router.page.base(`${window.location.origin}/ipns/${dapp}`);
+    Router.page.base(`/ipns/${dapp}`);
+    Router.page.show(`${route}`);
   }
 </script>
 

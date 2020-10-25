@@ -74,7 +74,7 @@
 <OmoHead {title} />
 <div
   class=" bg-white h-screen flex flex-col items-center justify-center bg-grey-lighter bg-cover bg-center"
-  style="background-image: url(https://source.unsplash.com/7awMZWDS4rg)">
+  style="background-image: url(/images/background.webp)">
   <div
     class="wrap shadow-2xl border border-gray-300 bg-white rounded-lg md:m-12 w-full h-full max-w-md justify-center"
     style="height:700px;position:relative;">
