@@ -15,11 +15,12 @@ import WalletConnectCircleSeed from "./src/Recycle/WalletConnectCircleSeed.svelt
 import WalletExplainSafe from "./src/Recycle/WalletExplainSafe.svelte"
 import WalletUnlock from "./src/Recycle/WalletUnlock.svelte"
 
+import BucketUpload from "./src/2-Molecules/BucketUpload.svelte";
+
 import WalletTransactions from "./src/Recycle/WalletTransactions.svelte"
 import WalletToken from "./src/Recycle/WalletToken.svelte"
 import WalletSafes from "./src/Recycle/WalletSafes.svelte"
 
-
-export const ViewComponents = [Boot, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed, WalletExplainSafe, WalletTransactions, WalletSafes, WalletToken, WalletUnlock]
+export const ViewComponents = [Boot, BucketUpload, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed, WalletExplainSafe, WalletTransactions, WalletSafes, WalletToken, WalletUnlock]
 
 export { Boot };

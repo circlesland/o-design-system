@@ -25,9 +25,7 @@
             class="w-32 h-32 mx-auto mt-6 border-4 border-white rounded-full"
             alt="name" />
           <p class="py-6 text-lg text-gray-100 uppercase font-title">
-            --
-            {user.email}
-            --
+            {#if user.username}{user.username}{:else}{user.email}{/if}
           </p>
         {/if}
       </div>
