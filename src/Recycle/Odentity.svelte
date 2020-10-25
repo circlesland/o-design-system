@@ -1,6 +1,11 @@
 <script lang="ts">
-  import { o } from "@omoearth/o-types";
+  import { o, Router } from "@omoearth/o-types";
   import Route from "../1-Atoms/Route.svelte";
+  async function logout() {
+    await window.o.session.logout();
+    Router.page(`login`);
+  }
+
 </script>
 
 <style>
@@ -31,6 +36,8 @@
     <p class="py-1">data store hub</p>
     <br />
     <p class="py-1">subscribe notifications</p>
+    <br />
+    <button on:click={logout}>logout</button>
   </main>
 
   <footer class="flex p-4">
