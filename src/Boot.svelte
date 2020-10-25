@@ -9,37 +9,44 @@
   import Compositor from "./Compositor/Compositor.svelte";
   import ExampleButtonArray from "./2-Molecules/ExampleButtonArray.svelte";
   import { oRegistry, Router } from "@omoearth/o-types";
-  import {
-    AddArguments,
-    Component,
-    ViewComponent,
-  } from "./4-Templates/abstract/abstract";
+  import { Page } from "./Page";
 
   export let registry: oRegistry;
-  let pageComponent = null;
-  let title = "°os loading";
+  let currentPage: Page = null;
   let error = null;
+  let title = "";
+  $: title = currentPage ? currentPage.title : error ? error : "°os loading";
+
   Router.page = page;
   if (Router.checkRoute()) {
     page("*", loadContent);
     page({ hashbang: true });
-    window.onbeforeunload = function () {return false;}
+    window.onbeforeunload = function () {
+      return false;
+    };
   }
 
   async function loadContent(ctx) {
     console.log("CONTEXT", ctx);
     try {
       let manifest = await Router.getManifestFromRoute(ctx);
-      pageComponent = ViewComponent.fromString(manifest, registry);
+      currentPage = Page.deserialize(manifest, registry);
+      if (!currentPage.ui) {
+        error = "Page has no defined UI";
+        currentPage = null;
+        return;
+      }
       error = null;
     } catch (e) {
       error = "Error while loading manifest";
-      pageComponent = null;
+      currentPage = null;
     }
   }
+
   registry.registerClass(CssGridTemplate);
   registry.registerClass(ExampleButtonArray);
   registry.registerClass(Molecule);
+  registry.registerClass(Page);
 </script>
 
 <style>
@@ -63,8 +70,8 @@
   style="background-image: url(https://source.unsplash.com/7awMZWDS4rg)">
   <div
     class="wrap shadow-2xl border border-gray-300 bg-white rounded-lg md:m-12 w-full h-full max-w-md justify-center">
-    {#if pageComponent}
-      <Compositor component={pageComponent} {registry} />
+    {#if currentPage}
+      <Compositor component={currentPage.ui} {registry} />
     {:else if error}
       <p class="error">ERROR: {error}</p>
     {:else}

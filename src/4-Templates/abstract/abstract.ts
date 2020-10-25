@@ -53,6 +53,9 @@ export abstract class Component<Args extends AddArguments> {
         var composite = this.convertToComposite(json, registry);
         return composite;
     }
+    static fromObject(obj: Object, registry: oRegistry): Component<any> {
+        return this.convertToComposite(obj, registry);
+    }
 
     private static convertToComposite(json: any, registry: oRegistry): Component<any> {
         var converted = registry.getNewInstance<Component<any>>(json.type, json, json.type);
