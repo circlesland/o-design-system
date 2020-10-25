@@ -26,13 +26,4 @@
         browser tab again and you will be logged in here.</span>
     </p>
   </main>
-
-  <footer class="flex p-4">
-    <Route dapp={o.DENTITY} route="saveName">
-      <div class="w-full text-center text-xs">
-        <span class="border border-gray-400 p-1 rounded">click on email login
-          link</span>
-      </div>
-    </Route>
-  </footer>
 </div>

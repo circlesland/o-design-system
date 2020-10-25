@@ -1,6 +1,10 @@
 <script lang="ts">
-  import { o } from "@omoearth/o-types";
+  import { o, Router } from "@omoearth/o-types";
   import Route from "../1-Atoms/Route.svelte";
+
+  if(!window.o.session.hasSession) Router.page("login");
+  let user = window.o.session.getUser();
+
 </script>
 
 <style>
@@ -16,13 +20,15 @@
     <div
       class="text-white mx-4 mt-4 mb-2 border-gray-200 border flex justify-center text-4xl font-bold text-center bg-primary rounded">
       <div>
+      {#if user}
         <img
-          src="/images/placeholder_profile.jpg"
+          src="{user.img}"
           class="w-32 h-32 rounded-full border-white border-4 mt-6"
           alt="name" />
         <p class="text-lg font-title text-gray-100 py-6 uppercase">
-          -- My Name --
+          -- {user.email} --
         </p>
+        {/if}
       </div>
     </div>
     <div class="flex flex-wrap mx-2">
