@@ -40,34 +40,6 @@
   registry.registerClass(CssGridTemplate);
   registry.registerClass(ExampleButtonArray);
   registry.registerClass(Molecule);
-
-  var grid: CssGridTemplate = CssGridTemplate.create({
-    templateAreas: "'hleft hright' 'main main' 'bottom bottom'",
-    templateColumns: "1fr 1fr",
-    templateRows: "60px 1fr 60px",
-  });
-  grid.add(Molecule.create(ExampleButtonArray.name), { area: "hleft" });
-  grid.add(Molecule.create(ExampleButtonArray.name), { area: "hright" });
-  grid.add(Molecule.create(ExampleButtonArray.name), { area: "bottom" });
-
-  let subgrid = CssGridTemplate.create({
-    templateAreas: "'content'",
-    templateColumns: "1fr",
-    templateRows: "1fr",
-  });
-  subgrid.add(Molecule.create(ExampleButtonArray.name), { area: "content" });
-  subgrid.add(Molecule.create(ExampleButtonArray.name), { area: "content" });
-  subgrid.add(Molecule.create(ExampleButtonArray.name), { area: "content" });
-  subgrid.add(Molecule.create(ExampleButtonArray.name), { area: "content" });
-
-  grid.add(subgrid, { area: "main" });
-// alert(grid.toString())
-  console.log(grid.toString());
-
-  function route(r) {
-    page.base(`${window.location.origin}/${r}`);
-    page(`${r}`);
-  }
 </script>
 
 <style>
@@ -86,11 +58,6 @@
 </style>
 
 <OmoHead {title} />
-<a on:click={() => route('index')}>index</a>
-<a on:click={() => route('hello')}>hello</a>
-<a on:click={() => route('wallet')}>wallet</a>
-<a on:click={() => route('test')}>test</a>
-<a on:click={() => route('foo')}>foo</a>
 <div
   class=" bg-white h-screen flex flex-col items-center justify-center bg-grey-lighter bg-cover bg-center"
   style="background-image: url(https://source.unsplash.com/7awMZWDS4rg)">
