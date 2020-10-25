@@ -12,12 +12,14 @@
 </style>
 
 <div class="grid h-full">
-  <main class="overflow-y-scroll h-full bg-gray-100 p-8 text-center">
-    <h1 class="text-center text-3xl font-title text-primary">Intro Slide</h1>
-    <p class="text-sm py-4 text-center text-gray-700">Explain More About Omo</p>
+  <main class="h-full p-8 overflow-y-scroll text-center bg-gray-100">
+    <h1 class="text-3xl text-center font-title text-primary">Intro Slide</h1>
+    <p class="py-4 text-sm text-center text-gray-700">Explain More About Omo</p>
   </main>
 
-  <footer class="flex p-4">
-    <Route dapp={o.DENTITY} route="install" cssClass="w-full">Next</Route>
+  <footer class="flex p-4 border-t border-gray-300">
+    <Route dapp={o.DENTITY} route="install" cssClass="w-full">
+      <button class="w-full">Next</button>
+    </Route>
   </footer>
 </div>

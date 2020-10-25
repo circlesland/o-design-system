@@ -28,18 +28,23 @@
     }
   </style>
   <div class="grid h-full">
-    <main class="h-full p-8 overflow-y-scroll bg-gray-100">
-      <h1 class="text-3xl text-center font-title text-primary">Signup</h1>
-      <p class="py-4 text-sm text-center text-gray-700">
-        signup and create your privately encrypted data, (d)app and file storage
-        with textile
-        <br />(up to 1GB free storage)
-        <br /><br />
-        <span class="text-xs text-gray-500">
-          *decentralized DID signup without email coming soon</span>
-      </p>
+    <main class="h-full overflow-y-scroll bg-gray-100">
+      {#if errorMessage}
+        <p class="omo-error">{errorMessage}</p>
+      {/if}
+      <div class="p-8 ">
+        <h1 class="text-3xl text-center font-title text-primary">Signup</h1>
+        <p class="py-4 text-sm text-center text-gray-700">
+          signup and create your privately encrypted data, (d)app and file
+          storage with textile
+          <br />(up to 1GB free storage)
+          <br /><br />
+          <span class="text-xs text-gray-500">
+            *decentralized DID signup without email coming soon</span>
+        </p>
+      </div>
     </main>
-    <footer class="p-4">
+    <footer class="p-4 border-t border-gray-300">
       <h3 class="text-sm font-medium text-primary">Please choose username</h3>
       <div class="flex flex-col mb-2 bg-white border rounded box">
         <input
@@ -54,17 +59,10 @@
           bind:value={email}
           placeholder="f.e. omo@sapien.org"
           class="flex-1 p-2 m-1 bg-transparent text-grey-darkest" />
-        {#if errorMessage}
-          <p style="color:red">{errorMessage}</p>
-        {/if}
       </div>
 
-      <div on:click={signUp} class="w-full mb-2">
-        <div class="w-full text-center text-primary">
-          <span
-            class="px-4 py-2 bg-gray-100 border border-gray-400 rounded">Send
-            register mail</span>
-        </div>
+      <div on:click={signUp} class="w-full my-4 text-center text-primary">
+        <button class="w-full"> Send register mail </button>
       </div>
       <button class="w-full text-gray-500 bg-gray-300">Sign up with Metamask
         (coming soon)</button>

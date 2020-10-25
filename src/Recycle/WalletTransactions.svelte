@@ -149,7 +149,6 @@
       </div>
     {/each}
   </main>
-
   <footer
     class="flex justify-between px-4 pt-3 pb-2 text-gray-400 bg-white border-t border-gray-300">
     <div
@@ -157,7 +156,7 @@
       <Route dapp={o.WALLET} route="safes">
         <div>
           <i class="text-2xl fas fa-piggy-bank" />
-          <p>soon</p>
+          <p>Accounts</p>
         </div>
       </Route>
     </div>
@@ -165,8 +164,8 @@
       class="flex items-center justify-center px-4 text-xs text-center text-primary">
       <Route dapp={o.WALLET} route="token">
         <div>
-          <i class="text-2xl fas fa-store" />
-          <p>soon</p>
+          <i class="text-2xl fas fa-coin" />
+          <p>Token</p>
         </div>
       </Route>
     </div>

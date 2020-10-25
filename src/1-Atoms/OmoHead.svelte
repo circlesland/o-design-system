@@ -33,7 +33,11 @@
   }
 
   button {
-    @apply py-2 px-4 text-center bg-primary rounded text-white;
+    @apply py-3 px-4 text-center bg-primary rounded text-white;
+  }
+
+  .omo-error {
+    @apply w-full h-16 p-4 text-xl text-center text-white bg-red-400 rounded-t;
   }
 </style>
 
