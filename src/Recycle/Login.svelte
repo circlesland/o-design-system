@@ -31,27 +31,36 @@
     }
   </style>
   <div class="grid h-full">
-    <main class="overflow-y-scroll h-full bg-gray-100 p-8">
-      <h1 class="text-primary text-3xl font-bold pb-2">Login</h1>
+    <main class="h-full overflow-y-scroll text-center bg-gray-100">
+      {#if errorMessage}
+        <p
+          class="omo-error">
+          {errorMessage}
+        </p>
+      {/if}
+      <div class="p-8">
+        <h1 class="text-3xl text-center font-title text-primary">Login</h1>
+        <p class="py-4 text-sm text-center text-gray-700">Lorem Ipsum</p>
+      </div>
     </main>
-    <footer class="p-4 ">
-      <h3 class="text-sm text-primary font-medium">Please enter your email</h3>
-      <div class="mb-4 box border rounded flex flex-col bg-white">
+    <footer class="p-4 border-t border-gray-300">
+      <p class="mb-1 text-xs text-gray-700 uppercase">
+        Please enter your email
+      </p>
+      <div class="flex flex-col mb-4 bg-white border rounded box">
         <input
           bind:value={email}
           placeholder="f.e. omo@sapien.org"
-          class="text-grey-darkest flex-1 p-2 m-1 bg-transparent" />
-        {#if errorMessage}
-          <p style="color:red">{errorMessage}</p>
-        {/if}
+          class="flex-1 p-2 m-1 bg-transparent text-grey-darkest" />
       </div>
-      <div class="w-full" on:click={signIn}>Send login mail</div>
-
-      {#if register}
-        <Route dapp={o.DENTITY} route="intro">
-          <button class="w-full">Register new Account</button>
-        </Route>
-      {/if}
+      <div class="flex">
+        {#if register}
+          <Route dapp={o.DENTITY} route="intro" cssClass="mr-4">
+            <button class="w-full bg-gray-300 text-primary">Register New</button>
+          </Route>
+        {/if}
+        <button class="w-full" on:click={signIn}>Send Login Mail</button>
+      </div>
     </footer>
   </div>
 {:else}

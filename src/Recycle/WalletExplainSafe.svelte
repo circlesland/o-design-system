@@ -18,7 +18,7 @@
   </main>
 
   <footer class="p-4 border-t border-gray-300">
-    <Route dapp={o.WALLET} route="createtoken">
+    <Route dapp={o.WALLET} route="unlock">
       <button class="w-full mb-2">Create New Safe</button>
     </Route>
     <Route dapp={o.WALLET} route="connectcircleseed">
