@@ -44,12 +44,11 @@
       </div>
       <div class="w-1/2 p-2">
         <div
-          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-800 bg-white border border-gray-200 rounded">
           <Route dapp={o.WALLET} route="index">
-            <div class="text-gray-500">
+            <div class="text-primary">
               <i class="text-5xl fas fa-piggy-bank" />
               <p class="pt-3">°Wallet</p>
-              <span class="text-xs">(coming soon)</span>
             </div>
           </Route>
         </div>
@@ -57,11 +56,12 @@
       <div class="w-1/2 p-2">
         <div
           class="flex items-center justify-center h-48 p-8 text-center text-gray-800 bg-white border border-gray-200 rounded">
-          <div class="text-gray-500">
-            <i class="text-5xl fas fa-address-book" />
-            <p class="pt-3">°Friends</p>
-            <span class="text-xs">(coming soon)</span>
-          </div>
+          <Route dapp={o.FRIENDS} route="index">
+            <div class="text-primary">
+              <i class="text-5xl fas fa-address-book" />
+              <p class="pt-3">°Friends</p>
+            </div>
+          </Route>
         </div>
       </div>
 
