@@ -1,6 +1,7 @@
 <script lang="ts">
   import { o, Router } from "@omoearth/o-types";
   import Route from "../1-Atoms/Route.svelte";
+import BucketImageUpload from "../2-Molecules/BucketImageUpload.svelte";
   async function logout() {
     await window.o.session.logout();
     Router.page(`login`);
@@ -23,6 +24,7 @@
     <p class="py-1">last name</p>
     <br />
     <p class="py-1">profile image</p>
+    <BucketImageUpload/>
     <br />
     <p class="py-1">public profile?</p>
     <br />

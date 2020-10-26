@@ -5,7 +5,7 @@
   import FilePondPluginImagePreview from "filepond-plugin-image-preview";
   import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
   import FilePondPluginImageCrop from "filepond-plugin-image-crop";
-  import { Buckets, RootObject } from "@textile/hub";
+  import type { FilePondFile } from "filepond";
 
   export const registerPlugin = FilePondLib.registerPlugin;
   registerPlugin(
@@ -21,13 +21,13 @@
 
   // the name to use for the internal file input
   let name = "filepond";
-
-  function handleAddFile(err, fileItem) {
-    Buckets.console.log("A file has been added", fileItem);
+  async function handleAddFile(err, fileItem: FilePondFile) {    
+    var result = await window.o.session.saveProfileImage(fileItem.file,fileItem.getMetadata());
+    console.log(result);
   }
 
-  let buckets: RootObject[] = [];
-  window.o.session.getOdentityBucket().then((result) => (buckets = result));
+
+  window.o.session.getProfileImageMeta().then(resp => console.log(resp));
 </script>
 
 <style>
@@ -44,7 +44,3 @@
   imageCropAspectRatio="1:1"
   allowMultiple={false}
   onaddfile={handleAddFile} />
-
-{#each buckets as bucket}
-  <pre> {JSON.stringify(bucket)}</pre>
-{/each}
