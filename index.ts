@@ -23,6 +23,11 @@ import WalletSafes from "./src/Recycle/WalletSafes.svelte"
 import FriendsIntro from "./src/Recycle/FriendsIntro.svelte"
 import FriendsOverview from "./src/Recycle/FriendsOverview.svelte"
 
-export const ViewComponents = [Boot, BucketUpload, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed, WalletExplainSafe, WalletTransactions, WalletSafes, WalletToken, WalletUnlock, FriendsIntro, FriendsOverview]
+import TextileKeys from "./src/Recycle/TextileKeys.svelte"
+import TextileAccounts from "./src/Recycle/TextileAccounts.svelte"
+import TextileThreads from "./src/Recycle/TextileThreads.svelte"
+
+
+export const ViewComponents = [Boot, BucketUpload, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed, WalletExplainSafe, WalletTransactions, WalletSafes, WalletToken, WalletUnlock, FriendsIntro, FriendsOverview, TextileKeys, TextileAccounts, TextileThreads]
 
 export { Boot };
