@@ -64,6 +64,18 @@
           </Route>
         </div>
       </div>
+      <div class="w-1/2 p-2">
+        <div
+          class="flex items-center justify-center h-48 p-6 text-center text-gray-400 bg-white border border-gray-200 rounded">
+          <Route dapp={o.TEXTILE} route="index">
+            <div class="text-gray-500">
+              <i class="text-5xl fas fa-database" />
+              <p class="pt-3">°TextileHub</p>
+              <span class="text-xs">(coming soon)</span>
+            </div>
+          </Route>
+        </div>
+      </div>
 
       <div class="w-1/2 p-2">
         <div
