@@ -26,6 +26,8 @@ import TextileKeys from "./src/Recycle/TextileKeys.svelte"
 import TextileAccounts from "./src/Recycle/TextileAccounts.svelte"
 import TextileThreads from "./src/Recycle/TextileThreads.svelte"
 
-export const ViewComponents = [Boot, BucketImageUpload, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed, WalletExplainSafe, WalletTransactions, WalletSafes, WalletToken, WalletUnlock, FriendsIntro, FriendsOverview, TextileKeys, TextileAccounts, TextileThreads]
+import WebsiteLandingPage from "./src/Recycle/WebsiteLandingPage.svelte"
+
+export const ViewComponents = [Boot, BucketImageUpload, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed, WalletExplainSafe, WalletTransactions, WalletSafes, WalletToken, WalletUnlock, FriendsIntro, FriendsOverview, TextileKeys, TextileAccounts, TextileThreads, WebsiteLandingPage]
 
 export { Boot };
