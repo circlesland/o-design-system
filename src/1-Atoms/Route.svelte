@@ -8,6 +8,7 @@
   function navigateTo() {
     // Router.page.base(`${window.location.origin}/ipns/${dapp}`);
     Router.page.base(`/ipns/${dapp}`);
+    window.history.pushState(null, null, `/ipns/${dapp}`);
     Router.page.show(`${route}`);
   }
 </script>

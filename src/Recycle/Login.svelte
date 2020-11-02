@@ -10,7 +10,7 @@
 
   async function signIn() {
     loggingIn = true;
-    var result = await window.o.session.signIn(email);
+    var result = await window.o.session.signIn(email.toLowerCase());
     if (result.error) {
       errorMessage = result.error.message;
       if (result.error.code == 5) register = true;
@@ -33,10 +33,7 @@
   <div class="grid h-full">
     <main class="h-full overflow-y-scroll text-center bg-gray-100">
       {#if errorMessage}
-        <p
-          class="omo-error">
-          {errorMessage}
-        </p>
+        <p class="omo-error">{errorMessage}</p>
       {/if}
       <div class="p-8">
         <h1 class="text-3xl text-center font-title text-primary">Login</h1>

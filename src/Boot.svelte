@@ -73,11 +73,11 @@
 
 <OmoHead {title} />
 <div
-  class=" bg-white h-screen flex flex-col items-center justify-center bg-grey-lighter bg-cover bg-center"
+  class="flex flex-col items-center justify-center h-full bg-white bg-center bg-cover bg-grey-lighter"
   style="background-image: url(/images/background.webp)">
   <div
-    class="wrap shadow-2xl border border-gray-300 bg-white rounded-lg md:m-12 w-full h-full max-w-md justify-center"
-    style="height:700px;position:relative;">
+    class="justify-center w-full h-full max-w-md bg-white border border-gray-300 rounded-lg shadow-2xl wrap md:m-12"
+    style="position:relative;">
     {#if currentPage}
       <Compositor component={currentPage.ui} {registry} />
     {:else if error}

@@ -1,7 +1,7 @@
 <script lang="ts">
-  let local =
+  let local = true; /*
     window.location.hostname == "localhost" ||
-    window.location.hostname == "127.0.0.1";
+    window.location.hostname == "127.0.0.1";*/
   let development = window.location.hostname == "omo.local";
   let css =
     local || development
@@ -43,13 +43,27 @@
 
 <svelte:options tag="o-head" />
 <svelte:head>
-  <!-- <link rel="shortcut icon" href="https://ipfs.io/ipfs/QmRzaPX95ysnpzrVBLeZgFhcEdVmF27L3JDeBVNYCZWtBv/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://ipfs.io/ipfs/QmRVrVNUn1oAVyomf81MNhQeDkJTPnUEo8AYuAU41Rkfp4" />
-  <link rel="icon" type="image/png" sizes="16x16" href="https://ipfs.io/ipfs/QmYJTv6Dzb5SeyJmsJgD8sbczZg7xGYxBqtkBjjUrHvVJo" />
-  <link rel="manifest" href="https://ipfs.io/ipfs/QmW4ABf3NMv1g3pW4R8XvTvnJu65H2uzYfkqnkP4Z6FBrQ" />
-  <link rel="mask-icon" href="https://ipfs.io/ipfs/QmSRL1mYnsvnW5PsMJMiKGDor5Vq8RMh74wmN6XoA91TfJ" color="#5bbad5" />
+  <link
+    rel="shortcut icon"
+    href="https://hub.textile.io/ipfs/bafkreidoxzlkolgcx6ua4wtequwbc33qdjqipvimi3kyf4forxle3gkfwa" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://hub.textile.io/ipfs/bafkreidoxzlkolgcx6ua4wtequwbc33qdjqipvimi3kyf4forxle3gkfwa" />
+  <link
+    rel="mask-icon"
+    href="https://hub.textile.io/ipfs/bafkreifxtz7qjutcjx43lg2ylux7qyvhtypz4dl637ld2h7d74oei4mjsq"
+    color="#5bbad5" />
   <meta name="msapplication-TileColor" content="#2b5797" />
-  <meta name="theme-color" content="#ffffff" /> -->
+  <meta name="theme-color" content="#ffffff" />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="https://hub.textile.io/ipfs/bafkreicljavvfnspea7yl5wd55pf7adiswrxorsopdgy3plamigye3dc7a" />
+  <link
+    rel="manifest"
+    href="https://hub.textile.io/ipfs/bafkreiglahzlptfirdqahg7bf6iwln3pluoecmkl6cnxofw6tkuvjllluq" />
   <link
     rel="stylesheet"
     href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"

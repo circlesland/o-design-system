@@ -114,7 +114,7 @@
 <style>
   .grid {
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
     position: relative;
   }
   .saldo {
@@ -123,11 +123,11 @@
 </style>
 
 <div class="grid h-full">
+  <div
+    class="flex items-center justify-center mx-4 mt-4 mb-2 text-5xl font-bold text-center text-white border border-gray-200 rounded bg-primary">
+    <p class="py-12 text-gray-100 uppercase font-title">672 ø</p>
+  </div>
   <main class="h-full overflow-y-scroll bg-gray-100">
-    <div
-      class="flex items-center justify-center mx-4 mt-4 mb-2 text-5xl font-bold text-center text-white border border-gray-200 rounded bg-primary">
-      <p class="py-12 text-gray-100 uppercase font-title">672 ø</p>
-    </div>
     {#each transactions as t}
       <div class="mx-4 mb-2">
         <div class="flex w-full bg-white border border-gray-300 rounded">
