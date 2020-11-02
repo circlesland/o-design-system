@@ -2,9 +2,6 @@ import type { oRegistry } from "@omoearth/o-types";
 import { AddArguments, Template, TemplateDefinition, ViewLeaf } from "../abstract/abstract";
 import CssGridComponent from "./CssGridComponent.svelte";
 
-
-
-
 export class SvelteLeafAddArguments extends AddArguments {
     ViewName: string;
 }
@@ -22,8 +19,6 @@ export class Molecule extends ViewLeaf<SvelteLeafAddArguments> {
         return molecule;
     }
 }
-
-
 
 export class CssGridDefinition extends TemplateDefinition {
     templateAreas?: string;
@@ -53,3 +48,5 @@ export class CssGridTemplate extends Template<CssGridAddArguments, CssGridDefini
         return super._create(CssGridTemplate, definition);
     }
 }
+
+

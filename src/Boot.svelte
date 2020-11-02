@@ -10,6 +10,7 @@
   import ExampleButtonArray from "./2-Molecules/ExampleButtonArray.svelte";
   import { oRegistry, Router } from "@omoearth/o-types";
   import { Page } from "./Page";
+  import { MobilePhoneTemplate } from "./4-Templates/CssGridTemplate/MobilePhoneTemplate";
 
   export let registry: oRegistry;
   let currentPage: Page = null;
@@ -51,6 +52,7 @@
     }
   }
   registry.registerClass(CssGridTemplate);
+  registry.registerClass(MobilePhoneTemplate);
   registry.registerClass(ExampleButtonArray);
   registry.registerClass(Molecule);
   registry.registerClass(Page);
@@ -72,20 +74,13 @@
 </style>
 
 <OmoHead {title} />
-<div
-  class="flex flex-col items-center justify-center h-full bg-white bg-center bg-cover bg-grey-lighter"
-  style="background-image: url(/images/background.webp)">
-  <div
-    class="justify-center w-full h-full max-w-md bg-white border border-gray-300 rounded-lg shadow-2xl wrap md:m-12"
-    style="position:relative;">
-    {#if currentPage}
-      <Compositor component={currentPage.ui} {registry} />
-    {:else if error}
-      <div class="error">
-        <p>ERROR: {error}</p>
-      </div>
-    {:else}
-      <p class="loading">°os loading</p>
-    {/if}
+
+{#if currentPage}
+  <Compositor component={currentPage.ui} {registry} />
+{:else if error}
+  <div class="error">
+    <p>ERROR: {error}</p>
   </div>
-</div>
+{:else}
+  <p class="loading">°os loading</p>
+{/if}
