@@ -26,6 +26,7 @@ import {o, Router} from "@omoearth/o-types";
   // TODO: Lock controls until the dependency is available
   function onWeb3(event:{detail:{web3:Web3}}) {
     web3 = event.detail.web3;
+    o.WALLET
   }
 </script>
 

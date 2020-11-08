@@ -1,54 +1,45 @@
 <script lang="ts">
   import { o } from "@omoearth/o-types";
   import Route from "../1-Atoms/Route.svelte";
+  import Web3 from "web3";
+  import {Person} from "@omoearth/o-circles-protocol/src/model/person";
+  import Web3Provider from "./Web3Provider.svelte";
+  import {CirclesHub} from "@omoearth/o-circles-protocol/src/circles/circlesHub";
 
-  let token = [
-    {
-      token: "Samuel",
-      amount: 442,
-      trusted: 27,
-    },
-    {
-      token: "Mela",
-      amount: 152,
-      trusted: 18,
-    },
-    {
-      token: "Julia",
-      amount: 127,
-      trusted: 15,
-    },
-    {
-      token: "Elsa",
-      amount: 102,
-      trusted: 12,
-    },
-    {
-      token: "Felix",
-      amount: 95,
-      trusted: 12,
-    },
-    {
-      token: "Daniel",
-      amount: 84,
-      trusted: 7,
-    },
-    {
-      token: "Bobo",
-      amount: 60,
-      trusted: 16,
-    },
-    {
-      token: "Chidi",
-      amount: 14,
-      trusted: 23,
-    },
-    {
-      token: "Lolo",
-      amount: 2,
-      trusted: 5,
-    },
-  ];
+  let web3: Web3;
+
+  let viewModel = {
+    tokens:[]
+  }
+
+  let person: Person;
+
+  function init()
+  {
+    if (!web3)
+      throw new Error("The 'web3' property has no value.");
+
+    const hubAddress = "0x29b9a7fBb8995b2423a71cC17cf9810798F6C543";
+    const circlesHub = new CirclesHub(web3, hubAddress);
+    const safeAddress = localStorage.getItem("omo.safeAddress");
+
+    person = new Person(circlesHub, safeAddress);
+    reload();
+  }
+
+  async function reload() {
+    viewModel.tokens = await person.getTokenBalances();
+  }
+
+  // TODO: Lock controls until the dependency is available
+  function onWeb3(event:{detail:{web3:Web3}}) {
+    web3 = event.detail.web3;
+
+    if (!web3)
+      return;
+
+    init();
+  }
 </script>
 
 <style>
@@ -62,24 +53,23 @@
   }
 </style>
 
+<Web3Provider on:initialized={onWeb3}/>
 <div class="grid h-full">
   <main class="h-full overflow-y-scroll bg-gray-100">
     <div
       class="flex items-center justify-center mx-4 mt-4 mb-2 text-5xl font-bold text-center text-white border border-gray-200 rounded bg-primary">
       <p class="py-12 text-gray-100 uppercase font-title">672 ø</p>
     </div>
-    {#each token as t}
+    {#each viewModel.tokens as t}
       <div class="mx-4 mb-2">
         <div class="flex w-full bg-white border border-gray-300 rounded">
           <div class="flex-1 px-4 py-2 text-base">
             <b class="text-primary">{t.token}</b>
             <p class="-mt-1 text-xs text-gray-500">
-              {t.trusted}x trusted
 
-              <!-- {moment.unix(item.time).locale('en').fromNow()} -->
             </p>
           </div>
-          <div class="h-12 px-3 py-1 text-3xl text-primary">{t.amount}</div>
+          <div class="h-12 px-3 py-1 text-3xl text-primary">{t.balance}</div>
         </div>
       </div>
     {/each}
