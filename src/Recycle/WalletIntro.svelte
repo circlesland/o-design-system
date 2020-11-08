@@ -1,6 +1,22 @@
 <script lang="ts">
-  import { o } from "@omoearth/o-types";
+  import {o, Router} from "@omoearth/o-types";
   import Route from "../1-Atoms/Route.svelte";
+
+  import {onMount} from "svelte";
+
+  onMount(() => {
+    //
+    // When we already got a key in the localStorage, we can skip the next steps
+    // and go straight to the 'transactions' page.
+    //
+    const privateKey = localStorage.getItem("omo.privateKey");
+    const ownerAddress = localStorage.getItem("omo.address");
+    const safeAddress = localStorage.getItem("omo.safeAddress");
+
+    if (privateKey && ownerAddress && safeAddress) {
+      Router.navigateTo(o.WALLET, "transactions");
+    }
+  });
 </script>
 
 <style>

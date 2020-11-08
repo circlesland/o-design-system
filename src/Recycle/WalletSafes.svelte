@@ -10,7 +10,7 @@
           name: "Samuel",
         },
       ],
-      balance: "672",
+      circlesBalance: "672",
     },
     {
       name: "Omo Earth Safe",
@@ -28,7 +28,7 @@
           name: "Mela",
         },
       ],
-      balance: "2672",
+      circlesBalance: "2672",
     },
   ];
 </script>

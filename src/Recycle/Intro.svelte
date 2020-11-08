@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { o } from "@omoearth/o-types";
+  import {o, Router} from "@omoearth/o-types";
   import Route from "../1-Atoms/Route.svelte";
 </script>
 

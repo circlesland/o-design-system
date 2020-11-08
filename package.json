@@ -18,6 +18,7 @@
   "homepage": "https://github.com/omoearth/o-design-system#readme",
   "dependencies": {
     "@omoearth/o-types": "file:../o-types",
+    "@omoearth/o-circles-protocol": "file:../libraries/o-circles-protocol",
     "filepond": "^4.21.1",
     "filepond-plugin-file-validate-type": "^1.2.5",
     "filepond-plugin-image-crop": "^2.0.4",
@@ -29,6 +30,8 @@
     "npm": "^6.14.8",
     "page": "^1.11.6",
     "svelte": "^3.29.4",
-    "svelte-filepond": "0.0.1"
+    "svelte-filepond": "0.0.1",
+    "web3": "^1.3.0",
+    "bip39": "^3.0.2"
   }
 }
