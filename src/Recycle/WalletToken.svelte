@@ -5,6 +5,7 @@
   import {Person} from "@omoearth/o-circles-protocol/src/model/person";
   import Web3Provider from "./Web3Provider.svelte";
   import {CirclesHub} from "@omoearth/o-circles-protocol/src/circles/circlesHub";
+  import {BN} from "ethereumjs-util";
 
   let web3: Web3;
 
@@ -40,6 +41,12 @@
 
     init();
   }
+
+  function formatWei(bn:BN) {
+    const str = web3.utils.fromWei(bn, "ether");
+    const dot = str.indexOf(".");
+    return str.slice(0, dot + 3);
+  }
 </script>
 
 <style>
@@ -69,7 +76,7 @@
 
             </p>
           </div>
-          <div class="h-12 px-3 py-1 text-3xl text-primary">{t.balance}</div>
+          <div class="h-12 px-3 py-1 text-3xl text-primary">{formatWei(t.balance)}</div>
         </div>
       </div>
     {/each}
