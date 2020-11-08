@@ -15,16 +15,16 @@
 </style>
 
 <div class="grid h-full">
-  <main class="h-full overflow-y-scroll bg-gray-100">
+  <main class="h-full overflow-y-scroll bg-light-100">
     <div
-      class="flex justify-center mx-4 mt-4 mb-2 text-4xl font-bold text-center text-white border border-gray-200 rounded bg-primary">
+      class="flex justify-center mx-4 mt-4 mb-2 text-4xl font-bold text-center bg-white border border-gray-200 rounded text-primary">
       <div>
         {#if user}
           <img
             src={user.img}
-            class="w-32 h-32 mx-auto mt-6 border-4 border-white rounded-full"
+            class="w-32 h-32 mx-auto mt-6 border-4 rounded-full border-light-300"
             alt="name" />
-          <p class="py-6 text-lg text-gray-100 uppercase font-title">
+          <p class="py-6 text-lg uppercase font-title">
             {#if user.username}{user.username}{:else}{user.email}{/if}
           </p>
         {/if}

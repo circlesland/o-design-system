@@ -60,7 +60,7 @@
       <div class="w-full md:w-1/2">
         <img
           src="https://hub.textile.io/ipns/bafzbeihcehyawlhvltossqfhblyqeuer34yak24ctesgwnnf7aeyk33lce/images/test.png"
-          alt="Reporting" />
+          alt="Test" />
       </div>
       <div class="w-full pl-10 md:w-1/2">
         <h4 class="mb-3 text-3xl font-bold text-gray-800">Step 2</h4>
