@@ -17,6 +17,7 @@ import WalletUnlock from "./src/Recycle/WalletUnlock.svelte"
 import WalletTransactions from "./src/Recycle/WalletTransactions.svelte"
 import WalletToken from "./src/Recycle/WalletToken.svelte"
 import WalletSafes from "./src/Recycle/WalletSafes.svelte"
+import WalletTransfer from "./src/Recycle/WalletTransfer.svelte"
 import BucketImageUpload from "./src/2-Molecules/BucketImageUpload.svelte";
 
 import FriendsIntro from "./src/Recycle/FriendsIntro.svelte"
@@ -28,6 +29,11 @@ import TextileThreads from "./src/Recycle/TextileThreads.svelte"
 
 import WebsiteLandingPage from "./src/Recycle/WebsiteLandingPage.svelte"
 
-export const ViewComponents = [Boot, BucketImageUpload, Dapps, Start, Install, Intro, Login, Mail, Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed, WalletExplainSafe, WalletTransactions, WalletSafes, WalletToken, WalletUnlock, FriendsIntro, FriendsOverview, TextileKeys, TextileAccounts, TextileThreads, WebsiteLandingPage]
+export const ViewComponents = [
+  Boot, BucketImageUpload, Dapps, Start, Install, Intro, Login, Mail,
+  Odentity, Register, SaveName, SaveProfileImage, WalletIntro, WalletConnectCircleSeed,
+  WalletExplainSafe, WalletTransactions, WalletSafes, WalletToken, WalletUnlock,
+  FriendsIntro, FriendsOverview, TextileKeys, TextileAccounts, TextileThreads,
+  WebsiteLandingPage, WalletTransfer]
 
-export { Boot };
+export {Boot};
