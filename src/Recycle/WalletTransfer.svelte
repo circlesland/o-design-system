@@ -56,6 +56,15 @@
     console.log(receipt);
   }
 
+  async function getUBI() {
+    const account:Account = {
+      address: safe.creatorAddress,
+      privateKey: "0x" + localStorage.getItem("omo.privateKey")
+    };
+    const receipt = await person.getUBI(account, safe);
+    console.log(receipt);
+  }
+
   $: {
     if (person)
       reload();
@@ -86,6 +95,7 @@
 <Web3Provider on:initialized={onWeb3}/>
 
 <div class="grid h-full">
+  <button on:click={() => getUBI()}>Get UBI</button>
   <div
     class="flex items-center justify-center mx-4 mt-4 mb-2 text-5xl font-bold text-center text-white border border-gray-200 rounded bg-primary">
     <p class="py-12 text-gray-100 uppercase font-title">{viewModel.circlesBalance} ø</p>
